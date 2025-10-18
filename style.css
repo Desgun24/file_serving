@@ -1,0 +1,105 @@
+/* Global styles */
+body {
+    font-family: 'Georgia', 'Palatino', serif;
+    background: linear-gradient(135deg, #FFE5EC 0%, #FFC0D3 50%, #FFB3C6 100%);
+    color: #6B4D57;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #D5567B;
+    text-align: center;
+    margin: 40px 0;
+    font-family: 'Brush Script MT', cursive;
+    text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5);
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 25px;
+    width: 60%;
+    margin: 20px auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: #E75A7C;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0 15px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover {
+    color: #FF69B4;
+    border-bottom: 2px solid #FFB3D9;
+}
+
+/* Posts Container */
+#postsContainer {
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+}
+
+/* Individual Post */
+.post {
+    background: linear-gradient(to right, #FFF5F7, #FFE8EE);
+    border: 2px solid #FFB3D9;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
+}
+
+/* Post Title */
+.post h2 {
+    font-size: 1.8em;
+    color: #D5567B;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+}
+
+/* Post Content */
+.post p {
+    color: #6B4D57;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    #postsContainer {
+        width: 90%;
+    }
+    
+    nav {
+        width: 85%;
+    }
+    
+    nav a {
+        font-size: 1em;
+    }
+    
+    .post h2 {
+        font-size: 1.5em;
+    }
+    
+    .post p {
+        font-size: 1em;
+    }
+}

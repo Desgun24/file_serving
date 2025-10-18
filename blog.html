@@ -1,0 +1,52 @@
+ <!-- views/blog.html --> 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Blog Page</title> 
+<link rel="stylesheet" href="/style.css"> 
+</head> 
+<body> 
+<h1>Blog Page</h1> 
+<nav> 
+<a href="/">Home</a> | 
+<a href="/about">About</a> | 
+<a href="/contact">Contact</a> | 
+<a href="/blog">Blog</a> 
+</nav> 
+<div id="postsContainer"> 
+<!-- Blog posts will be inserted here --> 
+<p>Loading posts...</p> 
+</div> 
+<script> 
+// Fetch the posts data from the server (endpoint '/api/posts') 
+fetch('/api/posts') 
+.then(response => response.json()) 
+.then(posts => { 
+const postsContainer = 
+document.getElementById('postsContainer'); 
+postsContainer.innerHTML = ''; // Clear loading message 
+// Loop through the posts and display each one 
+posts.forEach(post => { 
+const postElement = document.createElement('div'); 
+postElement.classList.add('post'); 
+const titleElement = document.createElement('h2'); 
+titleElement.textContent = post.title; 
+const contentElement = document.createElement('p'); 
+contentElement.textContent = post.content; 
+postElement.appendChild(titleElement); 
+postElement.appendChild(contentElement); 
+// Append the post to the container 
+postsContainer.appendChild(postElement); 
+}); 
+}) 
+.catch(error => { 
+const postsContainer = 
+document.getElementById('postsContainer'); 
+postsContainer.innerHTML = `<p>Error loading posts: 
+${error}</p>`; 
+}); 
+</script> 
+</body> 
+</html>
